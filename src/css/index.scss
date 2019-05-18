@@ -1,0 +1,76 @@
+.fuckfuck{
+  display:none;
+  transform: 50px;
+}
+
+
+
+body{
+  /* ddadddddddddddddddddddddd */ 
+  /* ddadddddddddddddddddddddd */ 
+
+  background-color: green;
+}
+
+body:hover{}
+.test{
+    transform: 50px;
+    display:block;
+    list-style-type: none;
+    li{
+        display:block;
+        float: left;
+        width:25px;
+        height:25px;
+        border: 1px solid #f00;
+    }
+    .img6,.img7,.img8{
+      width: 800px;
+      height:800px;
+    }
+
+
+    .img1{
+      background:url(../assets/imgs/sprites/vue/1@2x.png) no-repeat;
+    }
+
+    .img2{
+      background:url(../assets/imgs/sprites/vue/2@2x.png) no-repeat;
+    }
+
+    .img3{
+      background:url(../assets/imgs/sprites/webpack/3@2x.png) no-repeat;
+    }
+
+    .img4{
+      background:url(../assets/imgs/sprites/webpack/4@2x.png) no-repeat;
+    }
+
+    .img6{
+      background:url(../assets/imgs/6.jpg) no-repeat;
+    }
+
+    .img7{
+      background:url(../assets/imgs/7.jpg) no-repeat;
+    }
+
+    .img8{
+      background:url(../assets/imgs/8.jpg) no-repeat;
+    }
+
+}
+.btn{
+  width:30%;
+  margin:10px auto;
+  background:blue;
+  color:white;
+  font-size:30px;
+  line-height:1.4;
+  text-align:center;
+  padding: 10px;
+  transition:all 1s;
+  &:hover{
+    cursor: pointer;
+    width:50%;
+  }
+}
