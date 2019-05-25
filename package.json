@@ -5,7 +5,7 @@
   "author": "siyangslg@163.com",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+  	"start": "http-server dist",
     "dll": "webpack --color --config ./config/webpack.dll.js",
     "prod": "cross-env NODE_ENV=production webpack --color --progress --config  ./config/webpack.prod.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --color --progress --config  ./config/webpack.dev.js"

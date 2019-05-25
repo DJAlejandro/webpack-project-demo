@@ -1,11 +1,11 @@
 const merge = require("webpack-merge");
-const webpackBaseConfig = require("./webpack.common.js");
+const commonConfig = require("./webpack.common.js");
 
 const path = require("path")
 const webpack = require("webpack")
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
-module.exports = merge(webpackBaseConfig, {
+const devConfig = {
     mode:'development',
     output: {
         pathinfo: false,
@@ -16,12 +16,9 @@ module.exports = merge(webpackBaseConfig, {
     optimization: {
       removeAvailableModules: false,
       removeEmptyChunks: false,
-      splitChunks: false,
-      runtimeChunk: {
-        name: 'manifest'
-      }
+      splitChunks: false
     },
-    devtool: "cheap-module-source-map",//在大多数情况下，最佳选择是 cheap-module-eval-source-map
+    devtool: "cheap-module-eval-source-map",//在大多数情况下，最佳选择是 cheap-module-eval-source-map
     devServer: {
         publicPath: "/",
         port: 1111,
@@ -29,6 +26,7 @@ module.exports = merge(webpackBaseConfig, {
         // host: '192.168.31.240',
         open: true,
         hot: true,
+        hotOnly: true,
         overlay: true,
         compress: true,
         watchOptions: {
@@ -76,4 +74,6 @@ module.exports = merge(webpackBaseConfig, {
         new webpack.HotModuleReplacementPlugin(),
         new FriendlyErrorsWebpackPlugin()
     ]
-})
+}
+
+module.exports = merge(commonConfig, devConfig)

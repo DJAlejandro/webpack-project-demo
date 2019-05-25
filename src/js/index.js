@@ -13,21 +13,29 @@ const app = new Vue({
 });
 console.log(app);
 
-jQuery(document).ready(function($) {
-    $("#btn1").click(function() {
-        import(/* webpackChunkName:"subA" */ "./subA.js").then(subA => {
-            return subA.default
-        }).catch(function() {})
+jQuery(document).ready(function ($) {
+    $("#btn1").click(function () {
+        import(
+            /* webpackChunkName:"subA" */
+            /* webpackPrefetch: true */
+            "./subA.js"
+        ).then(({ default: _ }) => {
+            return _
+        }).catch(function () { })
     });
 });
 
-jQuery(document).ready(function($) {
-    $("#btn1").click(function() {
-        import(/* webpackChunkName:"lodash-es-difference" */ "lodash-es/difference").then(difference => {
-            const array3 = difference.default([3, 2, 1], [4, 2])
+jQuery(document).ready(function ($) {
+    $("#btn1").click(function () {
+        import(
+            /* webpackPrefetch: true */
+            /* webpackChunkName:"lodash-es-difference" */
+            "lodash-es/difference"
+        ).then(({ default: difference }) => {
+            const array3 = difference([3, 2, 1], [4, 2])
             // => [3, 1]
             return "diff=" + array3;
-        }).catch(function() {})
+        }).catch(function () { })
     });
 });
 

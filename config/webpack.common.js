@@ -28,6 +28,11 @@ module.exports = {
     // externals: {
     //     jquery: "jQuery"
     // },
+    optimization: {
+      runtimeChunk: {
+        name: 'manifest'
+      }
+    },
     module: {
         rules: [
             {

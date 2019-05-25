@@ -1,5 +1,5 @@
 const merge = require("webpack-merge");
-const webpackBaseConfig = require("./webpack.common.js");
+const commonConfig = require("./webpack.common.js");
 
 const path = require("path")
 const webpack = require("webpack")
@@ -18,7 +18,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
-module.exports = merge(webpackBaseConfig, {
+const prodConfig = {
     mode:'production',
     output: {
         filename: "js/[name]-[chunkhash:5].js",
@@ -26,6 +26,7 @@ module.exports = merge(webpackBaseConfig, {
         publicPath: "./",
         path: path.resolve(__dirname, "../dist/")
     },
+    // devtool: "cheap-module-source-map",
     optimization: {
         namedChunks: false,
         usedExports: true,
@@ -47,28 +48,25 @@ module.exports = merge(webpackBaseConfig, {
           })
         ],
         splitChunks: {
-            chunks: 'all',
+            chunks: 'async',
+            minChunks: 2,
+            minSize:30000,
             cacheGroups: {
                 jquery: { 
                     test: /jquery/,
                     chunks: 'all',
-                    minChunks: 1,
-                    minSize:0,
                     name: 'jquery',
                     priority: 100,
                 },
                 asyncs: {  // 异步加载公共包、组件等
                     chunks: 'async',
-                    minChunks: 2,
-                    minSize:0,
                     name: 'async-commons',
                     priority: 90,
                 },
                 commons: { // 其他同步加载公共包
                     chunks: 'all',
-                    minChunks: 2,
-                    minSize:0,
                     name: 'common',
+                    reuseExistingChunk: true,
                     priority: 80,
                 },
                 styles: {
@@ -151,4 +149,6 @@ module.exports = merge(webpackBaseConfig, {
         new webpack.NamedChunksPlugin(),
         new LodashModuleReplacementPlugin()
     ]
-})
+}
+
+module.exports = merge(commonConfig, prodConfig)
