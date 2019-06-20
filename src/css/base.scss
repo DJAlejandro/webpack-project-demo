@@ -1,67 +1,82 @@
-
 .clearfix:before,
 .clearfix:after {
-    display: table;
-    content: " ";
+  display: table;
+  content: " ";
 }
+
 .clearfix:after {
-    clear: both;
-}
-.clearfix{
-    *zoom: 1;
+  clear: both;
 }
 
+.clearfix {
+  *zoom: 1;
+}
 
 
-@font-face {font-family: "iconfont";
-  src: url('../assets/fonts/iconfont.eot?t=1534130764285'); /* IE9*/
+
+@font-face {
+  font-family: "iconfont";
+  src: url('../assets/fonts/iconfont.eot?t=1534130764285');
+  /* IE9*/
   src: url('../assets/fonts/iconfont.eot?t=1534130764285#iefix') format('embedded-opentype'),
-  url('../assets/fonts/iconfont.ttf?t=1534130764285') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('../assets/fonts/iconfont.svg?t=1534130764285#iconfont') format('svg'); /* iOS 4.1- */
+    url('../assets/fonts/iconfont.ttf?t=1534130764285') format('truetype'),
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../assets/fonts/iconfont.svg?t=1534130764285#iconfont') format('svg');
+  /* iOS 4.1- */
 }
 
 .iconfont {
-  font-family:"iconfont" !important;
-  font-size:16px;
-  font-style:normal;
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-zuoji:before { content: "\e645"; }
+.icon-zuoji:before {
+  content: "\e645";
+}
 
-.icon-ktv:before { content: "\e646"; }
+.icon-ktv:before {
+  content: "\e646";
+}
 
-.icon-simqia:before { content: "\e647"; }
+.icon-simqia:before {
+  content: "\e647";
+}
 
-.icon-wifi:before { content: "\e648"; }
+.icon-wifi:before {
+  content: "\e648";
+}
 
-.icon-anquan:before { content: "\e649"; }
+.icon-anquan:before {
+  content: "\e649";
+}
 
-.icon_lists{
+.icon_lists {
   width: 100% !important;
 
 }
 
-.icon_lists li{
-  float:left;
+.icon_lists li {
+  float: left;
   width: 100px;
-  height:180px;
+  height: 180px;
   text-align: center;
   list-style: none !important;
 }
-.icon_lists .icon{
+
+.icon_lists .icon {
   font-size: 42px;
   line-height: 100px;
   margin: 10px 0;
-  color:#333;
+  color: #333;
   -webkit-transition: font-size 0.25s ease-out 0s;
   -moz-transition: font-size 0.25s ease-out 0s;
   transition: font-size 0.25s ease-out 0s;
 
 }
-.icon_lists .icon:hover{
+
+.icon_lists .icon:hover {
   font-size: 100px;
 }
-
-

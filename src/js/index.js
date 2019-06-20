@@ -1,6 +1,6 @@
-import "../css/index.scss"
-import Vue from "vue"
-
+// cSpell:ignore prefetch
+import Vue from "vue";
+import "../css/index.scss";
 const s = new Set();
 [2, 3, 5, 4, 5, 2, 2].forEach(x => s.add(x));
 console.log(s);
@@ -19,9 +19,11 @@ jQuery(document).ready(function ($) {
             /* webpackChunkName:"subA" */
             /* webpackPrefetch: true */
             "./subA.js"
-        ).then(({ default: _ }) => {
+        ).then(({
+            default: _
+        }) => {
             return _
-        }).catch(function () { })
+        }).catch(function () {})
     });
 });
 
@@ -31,11 +33,13 @@ jQuery(document).ready(function ($) {
             /* webpackPrefetch: true */
             /* webpackChunkName:"lodash-es-difference" */
             "lodash-es/difference"
-        ).then(({ default: difference }) => {
+        ).then(({
+            default: difference
+        }) => {
             const array3 = difference([3, 2, 1], [4, 2])
             // => [3, 1]
             return "diff=" + array3;
-        }).catch(function () { })
+        }).catch(function () {})
     });
 });
 
